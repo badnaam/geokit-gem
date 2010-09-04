@@ -318,7 +318,7 @@ module Geokit
           # set the accuracy as google does (added by Andruby)
           res.accuracy=%w{unknown country state state city zip zip+4 street address building}.index(res.precision)
           res.success=true
-	  #Asit change - cache the result
+	  #badnaam change - cache the result
 	  if !address.nil?
 		logger.info "Caching location #{address}"						
 		GeocodeCache.store(address, res.city, res.state, res.lat, res.lng, "yahoo")
@@ -375,7 +375,7 @@ module Geokit
           res.state=doc.elements['//code/adminName1'].text if doc.elements['//code/adminName1']
           res.zip=doc.elements['//code/postalcode'].text if doc.elements['//code/postalcode']
           res.success=true
-	  #Asit change - cache the result
+	  #badnaam change - cache the result
 	  if !address.nil?
 		logger.info "Caching location #{address}"						
 		GeocodeCache.store(address, res.city, res.state, res.lat, res.lng, "geonames")
@@ -526,7 +526,7 @@ module Geokit
         end
         
         res.success=true
-	#Asit change - cache the result
+	#badnaam change - cache the result
 	#if !address.nil?
 		logger.info "Caching location #{res.zip}"						
 		GeocodeCache.store(res.zip, res.city, res.state, res.lat, res.lng, "google")
@@ -668,7 +668,7 @@ module Geokit
         GeoLoc.new
       end
     end   
-    #Asit modification
+    #badnaam modification
          class CacheGeocoder < Geocoder
       private
 
@@ -684,7 +684,7 @@ module Geokit
         end
       end
     end
-#End Asit modification	
+#End badnaam modification	
   end
 end
 
